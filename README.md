@@ -1,19 +1,5 @@
 # vue-intro
 
-Part 1 contains a new Vue project more or less as you would get it from the Vue CLI
-using vue create.  I have removed some extraneous content from the HelloWorld Component
-
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+In this section we removed the Vue cli boilerplate code, including the HelloWorld component
+We then added our own Box component which takes a few simple props and added 6 of them to 
+the main App component
