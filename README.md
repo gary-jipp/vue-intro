@@ -1,5 +1,7 @@
 # vue-intro
 
-In this section we removed the Vue cli boilerplate code, including the HelloWorld component
-We then added our own Box component which takes a few simple props and added 6 of them to 
-the main App component
+Here we expanded on the Box component, adding mouse event handlers  and style binding
+We also demonstrated props binding in the App component and dynamic binding to data items
+
+Note that v-bind:style can also be written as just :style .  The "v-bind" is implied
+Similarily, @vmouseover is shorthand for v-on.mouseOver .  All "v-on" events can be shortened this way

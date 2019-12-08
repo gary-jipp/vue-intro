@@ -1,8 +1,10 @@
 <template>
   <div
     class="box"
+    @mouseover="mouseOver"
+    v-on:mouseleave="mouseOver"
     v-bind:style="{
-    'background-color' : color, 
+    'background-color' : hover? hoverColor : color, 
     'color': textColor,
     }"
   >{{text}}</div>
@@ -14,10 +16,19 @@ export default {
   props: {
     text: String,
     color: String,
-    textColor: String
+    textColor: String,
+    hoverColor: { type: String, default: "grey" }
   },
-  data() {},
-  methods: {}
+  data() {
+    return {
+      hover: false
+    };
+  },
+  methods: {
+    mouseOver() {
+      this.hover = !this.hover;
+    }
+  }
 };
 </script>
 

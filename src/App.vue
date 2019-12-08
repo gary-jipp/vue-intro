@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <Box text="Box 1" color="green" textColor="white" />
+    <Box text="Box 1" color="green" textColor="white" hoverColor="peru" />
     <Box text="Box 2" color="blue" textColor="white" />
     <Box text="Box 3" color="red" textColor="white" />
-    <Box text="Box 4" color="red" textColor="white" />
-    <Box text="Box 5" color="green" textColor="white" />
-    <Box text="Box 6" color="blue" textColor="white" />
+    <Box text="Box 4" v-bind:color="bind1" textColor="white" />
+    <Box text="Box 5" v-bind="bind2" textColor="white" />
+    <Box v-bind="bind3" />
   </div>
 </template>
 
@@ -16,6 +16,18 @@ export default {
   name: "app",
   components: {
     Box
+  },
+  data: function() {
+    return {
+      bind1: "red",
+      bind2: { color: "green" },
+      bind3: {
+        text: "Dynamic Box",
+        color: "blue",
+        textColor: "red",
+        hoverColor: "lightGrey"
+      }
+    };
   }
 };
 </script>
