@@ -1,17 +1,14 @@
 <template>
   <div id="app">
-    <Box text="Box 1" color="green" textColor="white" hoverColor="peru" />
-    <Box text="Box 2" color="blue" textColor="white" />
-    <Box text="Box 3" color="red" textColor="white" />
-    <Box text="Box 4" v-bind:color="bind1" textColor="white" />
-    <Box text="Box 5" v-bind="bind2" textColor="white" />
-    <Box v-bind="bind3" />
+    <Box v-for="item of boxData" :text="item.text" v-bind="boxColor" :key="item.id">
+      <!-- content ends up in Box slot -->
+      {{item.id}}
+    </Box>
   </div>
 </template>
 
 <script>
 import Box from "./components/Box.vue";
-
 export default {
   name: "app",
   components: {
@@ -19,14 +16,15 @@ export default {
   },
   data: function() {
     return {
-      bind1: "red",
-      bind2: { color: "green" },
-      bind3: {
-        text: "Dynamic Box",
-        color: "blue",
-        textColor: "red",
-        hoverColor: "lightGrey"
-      }
+      boxColor: { color: "green", textColor: "white", hoverColor: "Peru" },
+      boxData: [
+        { id: 1, text: "Box" },
+        { id: 2, text: "Box" },
+        { id: 3, text: "Box" },
+        { id: 4, text: "Box" },
+        { id: 5, text: "Box" },
+        { id: 6, text: "Box" }
+      ]
     };
   }
 };

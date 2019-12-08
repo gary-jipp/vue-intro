@@ -2,12 +2,15 @@
   <div
     class="box"
     @mouseover="mouseOver"
-    v-on:mouseleave="mouseOver"
-    v-bind:style="{
+    @mouseleave="mouseOver"
+    :style="{
     'background-color' : hover? hoverColor : color, 
     'color': textColor,
     }"
-  >{{text}}</div>
+  >
+  {{text}}
+    <slot />
+  </div>
 </template>
 
 <script>
@@ -15,9 +18,9 @@ export default {
   name: "Box",
   props: {
     text: String,
-    color: String,
-    textColor: String,
-    hoverColor: { type: String, default: "grey" }
+    color: { type: String, default: "grey" },
+    textColor: { type: String, default: "white" },
+    hoverColor: { type: String, default: "lightGrey" }
   },
   data() {
     return {
